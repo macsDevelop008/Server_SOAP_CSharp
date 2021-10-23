@@ -9,7 +9,7 @@ namespace Server.Dapper
 {
     public class ConnectionDapper
     {
-        static string connection = @"Server=localhost; Database= soap_db; Uid=miguel; Pwd=l33tsupa;";
+        static string connection = @"Server=localhost; Database= proyecto2; Uid=Camilo; Pwd=Garcia;";
         private MySqlConnection db = new MySqlConnection(connection);
 
         public ConnectionDapper()

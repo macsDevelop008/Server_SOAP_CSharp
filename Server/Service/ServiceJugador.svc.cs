@@ -13,18 +13,32 @@ namespace Server.Service
     // NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione ServiceJugador.svc o ServiceJugador.svc.cs en el Explorador de soluciones e inicie la depuración.
     public class ServiceJugador : IServiceJugador
     {
-        public bool DeleteJugador(Jugador jugador)
+        public bool DeleteJugador(String id)
         {
+            Jugador jugador = new Jugador();
+            jugador.Id = id;
             return dapper().Delete(jugador);
         }
 
-        public Jugador FindById(Jugador jugador)
+        public Jugador FindById(String id)
         {
+            Jugador jugador = new Jugador();
+            jugador.Id = id;
             return dapper().FindbyId(jugador);
         }
 
-        public bool InsertJugador(Jugador jugador)
+ 
+        public bool InsertJugador(string id, string cuenta, string pass, string apodo, string email, int estado, string fecha)
         {
+            Jugador jugador = new Jugador();
+            jugador.Id = id;
+            jugador.Cuenta = cuenta;
+            jugador.Contraseña = pass;
+            jugador.Apodo = apodo;
+            jugador.Email = email;
+            jugador.EstadoRegistro = estado;
+            jugador.FechaModificacion = fecha;
+
             return dapper().Insert(jugador);
         }
 
@@ -33,8 +47,16 @@ namespace Server.Service
             return dapper().List();
         }
 
-        public bool UpdateJugador(Jugador jugador)
+        public bool UpdateJugador(string id, string cuenta, string pass, string apodo, string email, int estado, string fecha)
         {
+            Jugador jugador = new Jugador();
+            jugador.Id = id;
+            jugador.Cuenta = cuenta;
+            jugador.Contraseña = pass;
+            jugador.Apodo = apodo;
+            jugador.Email = email;
+            jugador.EstadoRegistro = estado;
+            jugador.FechaModificacion = fecha;
             return dapper().Update(jugador);
         }
 

@@ -13,16 +13,16 @@ namespace Server.Service
     public interface IServiceJugador
     {
         [OperationContract]
-        bool InsertJugador(Jugador jugador);
+        bool InsertJugador(String id,String cuenta, String pass, String apodo,String email,int estado,String fecha);
 
         [OperationContract]
-        bool UpdateJugador(Jugador jugador);
+        bool UpdateJugador(String id, String cuenta, String pass, String apodo, String email, int estado, String fecha);
 
         [OperationContract]
-        bool DeleteJugador(Jugador jugador);
+        bool DeleteJugador(String id);
 
         [OperationContract]
-        Jugador FindById(Jugador jugador);
+        Jugador FindById(String id);
 
         [OperationContract]
         List<Jugador> List();
